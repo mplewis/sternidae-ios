@@ -51,6 +51,9 @@
                             <constraint firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailing" id="my2-79-D0w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="compass" destination="hGF-Wf-UYq" id="qlH-Yt-E4r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

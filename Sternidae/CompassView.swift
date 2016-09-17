@@ -16,5 +16,13 @@ let pi = CGFloat(M_PI)
         path.lineWidth = thickness
         path.stroke()
     }
+    
+    func newPointer() {
+        let pointer = PointerView(frame: bounds)
+        pointer.backgroundColor = .clearColor()
+        pointer.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        pointer.thickness = thickness
+        addSubview(pointer)
+    }
 
 }
