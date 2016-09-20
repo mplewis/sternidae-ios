@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class NavHelpers: NSObject {
+class NavHelpers {
     /**
      - parameter degrees: an angle in degrees
      - returns: the angle converted to radians

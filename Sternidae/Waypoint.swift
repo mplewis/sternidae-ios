@@ -1,7 +1,7 @@
 import UIKit
 import CoreLocation
 
-class Waypoint: NSObject {
+class Waypoint {
     
     let name: String
     let loc: CLLocation
