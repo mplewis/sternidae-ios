@@ -12,6 +12,6 @@ class ViewController: UIViewController {
 
     @IBAction func onSliderChanged(sender: UISlider) {
         pointer?.length = CGFloat(sender.value)
-        pointer?.animateToAngle(2 * pi * CGFloat(sender.value))
+        pointer?.animateToAngle(2 * F_PI * CGFloat(sender.value))
     }
 }

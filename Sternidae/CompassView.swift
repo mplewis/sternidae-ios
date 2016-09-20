@@ -1,6 +1,6 @@
 import UIKit
 
-let pi = CGFloat(M_PI)
+let F_PI = CGFloat(M_PI)
 
 @IBDesignable class CompassView: UIView {
     
@@ -13,7 +13,7 @@ let pi = CGFloat(M_PI)
         let radius = (min(bounds.width, bounds.height) - thickness) / 2
         
         outlineColor.setStroke()
-        let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2 * pi, clockwise: true)
+        let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2 * F_PI, clockwise: true)
         path.lineWidth = thickness
         path.stroke()
     }
