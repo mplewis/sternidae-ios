@@ -4,7 +4,9 @@ import SwiftEventBus
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var navInfo: UILabel!
     @IBOutlet weak var compass: CompassView!
+
     var northPointer: PointerView?
     var waypointPointers: [PointerView] = []
 
@@ -35,6 +37,7 @@ class ViewController: UIViewController {
                 return
             }
             self.renderPointers(vector)
+            self.renderNavInfo(vector)
         }
     }
     
@@ -46,6 +49,27 @@ class ViewController: UIViewController {
             let displayCourse = courseTo - myCourse
             pointer.setAngle(degrees: displayCourse)
         }
+    }
+    
+    func renderNavInfo(current: Vector) {
+        let MPH_PER_MPS = 2.23694
+        let MI_PER_M = 0.000621371
+
+        let mph = String(format: "%.01f", current.speed * MPH_PER_MPS)
+        var info = [
+            "Heading: \(Int(current.course))°",
+            "Speed: \(mph)",
+        ]
+
+        MockData.waypoints.map { (waypoint) -> (String, UIColor, CLLocationDistance) in
+            return (waypoint.name, waypoint.color, current.loc.distanceFromLocation(waypoint.loc))
+        }.forEach { (name, color, meters) in
+            let mi = String(format: "%.01f", meters * MI_PER_M)
+            info.append("\(name): \(mi) mi")
+        }
+        
+        let output = info.joinWithSeparator("\n")
+        navInfo.text = output
     }
 
 }
