@@ -12,6 +12,8 @@
 		362227BC1D8DC53D008405F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BA1D8DC53D008405F1 /* Main.storyboard */; };
 		362227BE1D8DC53D008405F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 362227BD1D8DC53D008405F1 /* Assets.xcassets */; };
 		362227C11D8DC53E008405F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */; };
+		3631BE581D90EB5900001243 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE571D90EB5900001243 /* Waypoint.swift */; };
+		3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE591D90EDC400001243 /* NavHelpers.swift */; };
 		36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39C1D8DCC63002FE148 /* CompassView.swift */; };
 		36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39E1D8DDEC6002FE148 /* PointerView.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 		362227BD1D8DC53D008405F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		362227C01D8DC53E008405F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		362227C21D8DC53E008405F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3631BE571D90EB5900001243 /* Waypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
+		3631BE591D90EDC400001243 /* NavHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHelpers.swift; sourceTree = "<group>"; };
 		36CCC39C1D8DCC63002FE148 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		36CCC39E1D8DDEC6002FE148 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +66,8 @@
 				362227B81D8DC53D008405F1 /* ViewController.swift */,
 				36CCC39C1D8DCC63002FE148 /* CompassView.swift */,
 				36CCC39E1D8DDEC6002FE148 /* PointerView.swift */,
+				3631BE571D90EB5900001243 /* Waypoint.swift */,
+				3631BE591D90EDC400001243 /* NavHelpers.swift */,
 				362227BA1D8DC53D008405F1 /* Main.storyboard */,
 				362227BD1D8DC53D008405F1 /* Assets.xcassets */,
 				362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */,
@@ -144,6 +150,8 @@
 				36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */,
 				36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */,
 				362227B91D8DC53D008405F1 /* ViewController.swift in Sources */,
+				3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */,
+				3631BE581D90EB5900001243 /* Waypoint.swift in Sources */,
 				362227B71D8DC53D008405F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
