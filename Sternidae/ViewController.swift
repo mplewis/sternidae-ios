@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         let mph = String(format: "%.01f", current.speed * MPH_PER_MPS)
         var info = [
             "Heading: \(Int(current.course))°",
-            "Speed: \(mph)",
+            "Speed: \(mph) mph",
         ]
 
         MockData.waypoints.map { (waypoint) -> (String, UIColor, CLLocationDistance) in
