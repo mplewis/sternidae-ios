@@ -7,6 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
     var locMgr: CLLocationManager?
+    var lastVector: Vector?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         startListeningForLocation()
@@ -40,9 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation,
                          fromLocation oldLocation: CLLocation) {
-        print("New location: \(newLocation)")
-        print("Angle to Apple HQ: \(NavHelpers.haversine(from: newLocation, to: MockData.appleHQ.loc))")
-        SwiftEventBus.post("NewLocation", sender: newLocation)
+        guard let last = lastVector else {
+            lastVector = Vector(loc: newLocation, time: NSDate())
+            return
+        }
+        let current = Vector(loc: newLocation, time: NSDate(), last: last)
+        print(current)
+        SwiftEventBus.post("NewVector", sender: current)
+        lastVector = current
     }
     
 }

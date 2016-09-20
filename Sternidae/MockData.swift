@@ -2,11 +2,10 @@ import UIKit
 import CoreLocation
 
 class MockData {
-
-    static let appleHQ = Waypoint(
-        name: "Apple",
-        loc: CLLocation(latitude: 37.331843, longitude: -122.029574),
-        color: .orangeColor()
-    )
+    
+    static let waypoints = [
+        Waypoint(name: "Home", loc: CLLocation(latitude: 39.729337, longitude: -104.927597), color: .orangeColor()),
+        Waypoint(name: "Work", loc: CLLocation(latitude: 39.753386, longitude: -104.991516), color: .yellowColor()),
+    ]
 
 }

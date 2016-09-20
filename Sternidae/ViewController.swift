@@ -11,13 +11,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         pointer = compass.newPointer()
         
-        SwiftEventBus.onMainThread(self, name: "NewLocation") { event in
-            guard let current = event.object as? CLLocation else {
-                print("Invalid location posted: \(event.object)")
+        SwiftEventBus.onMainThread(self, name: "NewVector") { event in
+            guard let vector = event.object as? Vector else {
+                print("Invalid vector posted: \(event.object)")
                 return
             }
-            let degrees = NavHelpers.haversine(from: current, to: MockData.appleHQ.loc)
-            self.pointer?.setAngle(degrees: degrees)
+            self.pointer?.setAngle(degrees: vector.course)
         }
     }
 
