@@ -7,12 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var locMgr: CLLocationManager?
 
-    let appleHQ = Waypoint(
-        name: "Apple",
-        loc: CLLocation(latitude: 37.331843, longitude: -122.029574),
-        color: .orangeColor()
-    )
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         startListeningForLocation()
         return true
@@ -45,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         print("New location: \(newLocation)")
-        print("Angle to Apple HQ: \(NavHelpers.haversine(from: newLocation, to: appleHQ.loc))")
+        print("Angle to Apple HQ: \(NavHelpers.haversine(from: newLocation, to: MockData.appleHQ.loc))")
     }
     
 }

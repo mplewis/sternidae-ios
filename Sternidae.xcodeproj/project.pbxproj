@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361E0B381D90F798001AEE62 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361E0B371D90F798001AEE62 /* MockData.swift */; };
 		362227B71D8DC53D008405F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362227B61D8DC53D008405F1 /* AppDelegate.swift */; };
 		362227B91D8DC53D008405F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362227B81D8DC53D008405F1 /* ViewController.swift */; };
 		362227BC1D8DC53D008405F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BA1D8DC53D008405F1 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		361E0B371D90F798001AEE62 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		362227B31D8DC53D008405F1 /* Sternidae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sternidae.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		362227B61D8DC53D008405F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		362227B81D8DC53D008405F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				36CCC39E1D8DDEC6002FE148 /* PointerView.swift */,
 				3631BE571D90EB5900001243 /* Waypoint.swift */,
 				3631BE591D90EDC400001243 /* NavHelpers.swift */,
+				361E0B371D90F798001AEE62 /* MockData.swift */,
 				362227BA1D8DC53D008405F1 /* Main.storyboard */,
 				362227BD1D8DC53D008405F1 /* Assets.xcassets */,
 				362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 				362227B91D8DC53D008405F1 /* ViewController.swift in Sources */,
 				3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */,
 				3631BE581D90EB5900001243 /* Waypoint.swift in Sources */,
+				361E0B381D90F798001AEE62 /* MockData.swift in Sources */,
 				362227B71D8DC53D008405F1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
