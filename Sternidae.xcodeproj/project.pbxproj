@@ -15,6 +15,8 @@
 		362227C11D8DC53E008405F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */; };
 		3631BE581D90EB5900001243 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE571D90EB5900001243 /* Waypoint.swift */; };
 		3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE591D90EDC400001243 /* NavHelpers.swift */; };
+		3684C7271D90FFD800BA4FE5 /* denver-commute.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */; };
+		3684C7291D91011B00BA4FE5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3684C7281D91011B00BA4FE5 /* Vector.swift */; };
 		36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39C1D8DCC63002FE148 /* CompassView.swift */; };
 		36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39E1D8DDEC6002FE148 /* PointerView.swift */; };
 		905AB1BEA257E5B5B51C0EFA /* Pods_Sternidae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A31B4AA7D824EFB65E21 /* Pods_Sternidae.framework */; };
@@ -31,6 +33,8 @@
 		362227C21D8DC53E008405F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3631BE571D90EB5900001243 /* Waypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 		3631BE591D90EDC400001243 /* NavHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHelpers.swift; sourceTree = "<group>"; };
+		3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "denver-commute.gpx"; sourceTree = "<group>"; };
+		3684C7281D91011B00BA4FE5 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		36CCC39C1D8DCC63002FE148 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		36CCC39E1D8DDEC6002FE148 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
 		CE88A31B4AA7D824EFB65E21 /* Pods_Sternidae.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sternidae.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,8 @@
 				362227BD1D8DC53D008405F1 /* Assets.xcassets */,
 				362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */,
 				362227C21D8DC53E008405F1 /* Info.plist */,
+				3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */,
+				3684C7281D91011B00BA4FE5 /* Vector.swift */,
 			);
 			path = Sternidae;
 			sourceTree = "<group>";
@@ -166,6 +172,7 @@
 			files = (
 				362227C11D8DC53E008405F1 /* LaunchScreen.storyboard in Resources */,
 				362227BE1D8DC53D008405F1 /* Assets.xcassets in Resources */,
+				3684C7271D90FFD800BA4FE5 /* denver-commute.gpx in Resources */,
 				362227BC1D8DC53D008405F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +234,7 @@
 			files = (
 				36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */,
 				36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */,
+				3684C7291D91011B00BA4FE5 /* Vector.swift in Sources */,
 				362227B91D8DC53D008405F1 /* ViewController.swift in Sources */,
 				3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */,
 				3631BE581D90EB5900001243 /* Waypoint.swift in Sources */,
