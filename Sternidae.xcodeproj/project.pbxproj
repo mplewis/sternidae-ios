@@ -14,7 +14,6 @@
 		362227C11D8DC53E008405F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */; };
 		36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39C1D8DCC63002FE148 /* CompassView.swift */; };
 		36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39E1D8DDEC6002FE148 /* PointerView.swift */; };
-		36CCC3A11D8DEB70002FE148 /* UIView+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC3A01D8DEB70002FE148 /* UIView+Rotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		362227C21D8DC53E008405F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36CCC39C1D8DCC63002FE148 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		36CCC39E1D8DDEC6002FE148 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
-		36CCC3A01D8DEB70002FE148 /* UIView+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Rotation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				362227BD1D8DC53D008405F1 /* Assets.xcassets */,
 				362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */,
 				362227C21D8DC53E008405F1 /* Info.plist */,
-				36CCC3A01D8DEB70002FE148 /* UIView+Rotation.swift */,
 			);
 			path = Sternidae;
 			sourceTree = "<group>";
@@ -146,7 +143,6 @@
 			files = (
 				36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */,
 				36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */,
-				36CCC3A11D8DEB70002FE148 /* UIView+Rotation.swift in Sources */,
 				362227B91D8DC53D008405F1 /* ViewController.swift in Sources */,
 				362227B71D8DC53D008405F1 /* AppDelegate.swift in Sources */,
 			);
