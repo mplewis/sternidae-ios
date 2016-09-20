@@ -44,8 +44,14 @@ import CoreLocation
         return (inner, outer)
     }
     
+    /**
+     Sets the angle of the pointer.
+     
+     - parameter degrees: the angle to set the pointer to, in compass degrees. 0 = N, 90 = E
+     */
     func setAngle(degrees degrees: CLLocationDegrees) {
-        let rads = NavHelpers.degreesToRadians(degrees)
+        let unitCircleDegrees = degrees - 90
+        let rads = NavHelpers.degreesToRadians(unitCircleDegrees)
         transform = CGAffineTransformMakeRotation(CGFloat(rads))
     }
 

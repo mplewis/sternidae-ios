@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import SwiftEventBus
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -37,9 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation,
+                         fromLocation oldLocation: CLLocation) {
         print("New location: \(newLocation)")
         print("Angle to Apple HQ: \(NavHelpers.haversine(from: newLocation, to: MockData.appleHQ.loc))")
+        SwiftEventBus.post("NewLocation", sender: newLocation)
     }
     
 }
