@@ -28,10 +28,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0Nb-ub-Cv6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FfN-g8-eet"/>
-                            <constraint firstItem="0Nb-ub-Cv6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sRV-gp-m9Q"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="0Nb-ub-Cv6"/>
