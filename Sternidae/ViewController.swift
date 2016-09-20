@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     func initPointers() {
         let np = compass.newPointer()
         np.length = 0.6
-        np.color = .redColor()
+        np.color = UIColor(red:0.91, green:0.30, blue:0.24, alpha:1.0)
         northPointer = np
 
         for waypoint in MockData.waypoints {
