@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -15,15 +16,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaA-S7-ExD">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-Wf-UYq" customClass="CompassView" customModule="Sternidae" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="584" height="546"/>
+                                        <rect key="frame" x="8" y="270" width="321.5" height="321.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hGF-Wf-UYq" secondAttribute="height" multiplier="1:1" id="CWt-aX-b8j"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="thickness">
                                                 <real key="value" value="10"/>
@@ -33,25 +37,22 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-fA-ZwH">
-                                        <rect key="frame" x="6" y="562" width="588" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="KBe-sJ-0sB"/>
-                                        </constraints>
-                                        <connections>
-                                            <action selector="onSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="CTL-eD-Yre"/>
-                                        </connections>
-                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nav Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzh-v4-R8X">
+                                        <rect key="frame" x="8" y="8" width="321.5" height="254"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="QzP-fA-ZwH" firstAttribute="top" secondItem="hGF-Wf-UYq" secondAttribute="bottom" constant="8" id="8U5-mn-ZP1"/>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="QZF-VG-To3"/>
-                                    <constraint firstAttribute="bottom" secondItem="QzP-fA-ZwH" secondAttribute="bottom" constant="8" id="Sc6-eY-QKD"/>
-                                    <constraint firstAttribute="trailing" secondItem="QzP-fA-ZwH" secondAttribute="trailing" constant="8" id="a7X-ob-wgM"/>
-                                    <constraint firstItem="QzP-fA-ZwH" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leading" constant="8" id="bIF-ib-TWc"/>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" id="byO-Xa-m28"/>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="top" secondItem="uaA-S7-ExD" secondAttribute="topMargin" id="wDq-Re-KJf"/>
+                                    <constraint firstItem="Uzh-v4-R8X" firstAttribute="top" secondItem="uaA-S7-ExD" secondAttribute="topMargin" id="0qC-Ng-zPj"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="top" secondItem="Uzh-v4-R8X" secondAttribute="bottom" constant="8" id="Bpp-ds-fw5"/>
+                                    <constraint firstItem="Uzh-v4-R8X" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" id="Eig-Sd-kkd"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="Wh8-8U-5uM"/>
+                                    <constraint firstItem="Uzh-v4-R8X" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="Wy7-l6-Yc0"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="bottom" secondItem="uaA-S7-ExD" secondAttribute="bottomMargin" id="gR5-Qy-lcf"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" id="nnW-uv-CLD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -64,14 +65,14 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
+                    <size key="freeformSize" width="337.5" height="600"/>
                     <connections>
                         <outlet property="compass" destination="hGF-Wf-UYq" id="qlH-Yt-E4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="302"/>
+            <point key="canvasLocation" x="250.75" y="222"/>
         </scene>
     </scenes>
 </document>

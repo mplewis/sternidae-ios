@@ -82,12 +82,12 @@
 				3631BE571D90EB5900001243 /* Waypoint.swift */,
 				3631BE591D90EDC400001243 /* NavHelpers.swift */,
 				361E0B371D90F798001AEE62 /* MockData.swift */,
+				3684C7281D91011B00BA4FE5 /* Vector.swift */,
 				362227BA1D8DC53D008405F1 /* Main.storyboard */,
 				362227BD1D8DC53D008405F1 /* Assets.xcassets */,
 				362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */,
 				362227C21D8DC53E008405F1 /* Info.plist */,
 				3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */,
-				3684C7281D91011B00BA4FE5 /* Vector.swift */,
 			);
 			path = Sternidae;
 			sourceTree = "<group>";

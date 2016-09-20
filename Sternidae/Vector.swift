@@ -33,7 +33,12 @@ class Vector: CustomStringConvertible {
         self.loc = loc
         self.time = time
         self.speed = dist / since
-        self.course = NavHelpers.haversine(from: last.loc, to: loc)
+        if dist == 0 {
+            // if we don't move, don't change the course
+            self.course = last.course
+        } else {
+            self.course = NavHelpers.haversine(from: last.loc, to: loc)
+        }
         self.valid = true
     }
     
