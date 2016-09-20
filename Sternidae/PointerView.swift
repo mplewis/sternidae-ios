@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 @IBDesignable class PointerView: UIView {
     
@@ -42,9 +43,10 @@ import UIKit
         
         return (inner, outer)
     }
-
-    func animateToAngle(radians: CGFloat) {
-        transform = CGAffineTransformMakeRotation(radians)
+    
+    func setAngle(degrees degrees: CLLocationDegrees) {
+        let rads = NavHelpers.degreesToRadians(degrees)
+        transform = CGAffineTransformMakeRotation(CGFloat(rads))
     }
 
 }
