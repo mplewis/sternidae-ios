@@ -47,5 +47,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We use your location to help you reach your waypoints.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>
