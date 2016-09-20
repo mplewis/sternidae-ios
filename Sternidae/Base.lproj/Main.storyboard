@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-Wf-UYq" customClass="CompassView" customModule="Sternidae" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="584" height="584"/>
+                                        <rect key="frame" x="8" y="8" width="584" height="546"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="thickness">
@@ -33,11 +33,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-fA-ZwH">
+                                        <rect key="frame" x="6" y="562" width="588" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KBe-sJ-0sB"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="CTL-eD-Yre"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="bottom" secondItem="uaA-S7-ExD" secondAttribute="bottomMargin" id="6gw-3t-uQy"/>
+                                    <constraint firstItem="QzP-fA-ZwH" firstAttribute="top" secondItem="hGF-Wf-UYq" secondAttribute="bottom" constant="8" id="8U5-mn-ZP1"/>
                                     <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="QZF-VG-To3"/>
+                                    <constraint firstAttribute="bottom" secondItem="QzP-fA-ZwH" secondAttribute="bottom" constant="8" id="Sc6-eY-QKD"/>
+                                    <constraint firstAttribute="trailing" secondItem="QzP-fA-ZwH" secondAttribute="trailing" constant="8" id="a7X-ob-wgM"/>
+                                    <constraint firstItem="QzP-fA-ZwH" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leading" constant="8" id="bIF-ib-TWc"/>
                                     <constraint firstItem="hGF-Wf-UYq" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" id="byO-Xa-m28"/>
                                     <constraint firstItem="hGF-Wf-UYq" firstAttribute="top" secondItem="uaA-S7-ExD" secondAttribute="topMargin" id="wDq-Re-KJf"/>
                                 </constraints>
@@ -51,13 +63,15 @@
                             <constraint firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailing" id="my2-79-D0w"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="compass" destination="hGF-Wf-UYq" id="qlH-Yt-E4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="519"/>
+            <point key="canvasLocation" x="247" y="302"/>
         </scene>
     </scenes>
 </document>

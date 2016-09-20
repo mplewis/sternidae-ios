@@ -6,6 +6,7 @@ let pi = CGFloat(M_PI)
     
     @IBInspectable var outlineColor: UIColor = .whiteColor()
     @IBInspectable var thickness: CGFloat = 5
+    var pointers: [PointerView] = []
     
     override func drawRect(rect: CGRect) {
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
@@ -17,12 +18,23 @@ let pi = CGFloat(M_PI)
         path.stroke()
     }
     
-    func newPointer() {
+    func newPointer() -> PointerView {
         let pointer = PointerView(frame: bounds)
         pointer.backgroundColor = .clearColor()
+        pointer.color = .orangeColor()
         pointer.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        pointer.outerGap = thickness
         pointer.thickness = thickness
         addSubview(pointer)
+        pointers.append(pointer)
+        return pointer
+    }
+    
+    func clearPointers() {
+        for pointer in pointers {
+            pointer.removeFromSuperview()
+        }
+        pointers = []
     }
 
 }
