@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locMgr: CLLocationManager?
     var lastVector: Vector?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         startListeningForLocation()
         return true
     }
@@ -18,19 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locMgr = CLLocationManager()
         locMgr?.delegate = self
         let status = CLLocationManager.authorizationStatus()
-        if status == .NotDetermined {
+        if status == .notDetermined {
             locMgr?.requestWhenInUseAuthorization()
         } else {
             startMonitoring(status)
         }
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         startMonitoring(status)
     }
     
-    func startMonitoring(status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
+    func startMonitoring(_ status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
             locMgr?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locMgr?.startUpdatingLocation()
             print("Location services started")
@@ -39,13 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation,
+    func locationManager(_ manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation,
                          fromLocation oldLocation: CLLocation) {
         guard let last = lastVector else {
-            lastVector = Vector(loc: newLocation, time: NSDate())
+            lastVector = Vector(loc: newLocation, time: Date())
             return
         }
-        let current = Vector(loc: newLocation, time: NSDate(), last: last)
+        let current = Vector(loc: newLocation, time: Date(), last: last)
         print(current)
         SwiftEventBus.post("NewVector", sender: current)
         lastVector = current

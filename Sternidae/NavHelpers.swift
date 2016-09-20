@@ -6,13 +6,13 @@ class NavHelpers {
      - parameter degrees: an angle in degrees
      - returns: the angle converted to radians
      */
-    class func degreesToRadians(degrees: CLLocationDegrees) -> Double { return degrees * M_PI / 180.0 }
+    class func degreesToRadians(_ degrees: CLLocationDegrees) -> Double { return degrees * M_PI / 180.0 }
 
     /**
      - parameter radians: an angle in radians
      - returns: the angle converted to degrees
      */
-    class func radiansToDegrees(radians: Double) -> CLLocationDegrees { return radians * 180.0 / M_PI }
+    class func radiansToDegrees(_ radians: Double) -> CLLocationDegrees { return radians * 180.0 / M_PI }
     
     /**
      Gets the bearing between two points using the Haversine function.
@@ -22,7 +22,7 @@ class NavHelpers {
      
      - returns: the angle between `from` and `to`, in radians
      */
-    class func haversine(from from: CLLocation, to: CLLocation) -> CLLocationDegrees {
+    class func haversine(from: CLLocation, to: CLLocation) -> CLLocationDegrees {
         let lat1 = degreesToRadians(from.coordinate.latitude)
         let lon1 = degreesToRadians(from.coordinate.longitude)
         

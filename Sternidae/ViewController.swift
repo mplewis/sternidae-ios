@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         watchEventBus()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
     func initPointers() {
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func renderPointers(current: Vector) {
+    func renderPointers(_ current: Vector) {
         let myCourse = current.course
         northPointer?.setAngle(degrees: -myCourse)
         for (waypoint, pointer) in zip(MockData.waypoints, waypointPointers) {
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func renderNavInfo(current: Vector) {
+    func renderNavInfo(_ current: Vector) {
         let MPH_PER_MPS = 2.23694
         let MI_PER_M = 0.000621371
 
@@ -67,13 +67,13 @@ class ViewController: UIViewController {
         ]
 
         MockData.waypoints.map { (waypoint) -> (String, UIColor, CLLocationDistance) in
-            return (waypoint.name, waypoint.color, current.loc.distanceFromLocation(waypoint.loc))
+            return (waypoint.name, waypoint.color, current.loc.distance(from: waypoint.loc))
         }.forEach { (name, color, meters) in
             let mi = String(format: "%.01f", meters * MI_PER_M)
             info.append("\(name): \(mi) mi")
         }
         
-        let output = info.joinWithSeparator("\n")
+        let output = info.joined(separator: "\n")
         navInfo.text = output
     }
 

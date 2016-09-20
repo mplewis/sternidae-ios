@@ -3,7 +3,7 @@ import CoreLocation
 
 @IBDesignable class PointerView: UIView {
     
-    @IBInspectable var color: UIColor = .whiteColor()
+    @IBInspectable var color: UIColor = .white()
     @IBInspectable var thickness: CGFloat = 5
     @IBInspectable var outerGap: CGFloat = 0
     @IBInspectable var length: CGFloat = 1.0 {
@@ -14,15 +14,15 @@ import CoreLocation
         }
     }
     
-    private var innerGap: CGFloat = 0
+    fileprivate var innerGap: CGFloat = 0
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
         path.lineWidth = thickness
 
         let (inner, outer) = innerOuterPoints()
-        path.moveToPoint(inner)
-        path.addLineToPoint(outer)
+        path.move(to: inner)
+        path.addLine(to: outer)
 
         color.setStroke()
         path.stroke()
@@ -49,10 +49,10 @@ import CoreLocation
      
      - parameter degrees: the angle to set the pointer to, in compass degrees. 0 = N, 90 = E
      */
-    func setAngle(degrees degrees: CLLocationDegrees) {
+    func setAngle(degrees: CLLocationDegrees) {
         let unitCircleDegrees = degrees - 90
         let rads = NavHelpers.degreesToRadians(unitCircleDegrees)
-        transform = CGAffineTransformMakeRotation(CGFloat(rads))
+        transform = CGAffineTransform(rotationAngle: CGFloat(rads))
     }
 
 }

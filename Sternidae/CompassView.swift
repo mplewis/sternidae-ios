@@ -4,11 +4,11 @@ let F_PI = CGFloat(M_PI)
 
 @IBDesignable class CompassView: UIView {
     
-    @IBInspectable var outlineColor: UIColor = .whiteColor()
+    @IBInspectable var outlineColor: UIColor = .white()
     @IBInspectable var thickness: CGFloat = 5
     var pointers: [PointerView] = []
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         let radius = (min(bounds.width, bounds.height) - thickness) / 2
         
@@ -20,9 +20,9 @@ let F_PI = CGFloat(M_PI)
     
     func newPointer() -> PointerView {
         let pointer = PointerView(frame: bounds)
-        pointer.backgroundColor = .clearColor()
-        pointer.color = .orangeColor()
-        pointer.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        pointer.backgroundColor = .clear()
+        pointer.color = .orange()
+        pointer.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         pointer.outerGap = thickness
         pointer.thickness = thickness
         addSubview(pointer)

@@ -5,7 +5,7 @@ import CoreLocation
 class Vector: CustomStringConvertible {
     
     let loc: CLLocation
-    let time: NSDate
+    let time: Date
     let speed: CLLocationSpeed
     let course: CLLocationDirection
     let valid: Bool
@@ -27,9 +27,9 @@ class Vector: CustomStringConvertible {
      
      - returns: A Vector with a valid speed and course
      */
-    init(loc: CLLocation, time: NSDate, last: Vector) {
-        let dist = loc.distanceFromLocation(last.loc)
-        let since = time.timeIntervalSinceDate(last.time)
+    init(loc: CLLocation, time: Date, last: Vector) {
+        let dist = loc.distance(from: last.loc)
+        let since = time.timeIntervalSince(last.time)
         self.loc = loc
         self.time = time
         self.speed = dist / since
@@ -50,7 +50,7 @@ class Vector: CustomStringConvertible {
      
      - returns: A Vector with no valid speed and course
      */
-    init(loc: CLLocation, time: NSDate) {
+    init(loc: CLLocation, time: Date) {
         self.loc = loc
         self.time = time
         self.speed = -1
