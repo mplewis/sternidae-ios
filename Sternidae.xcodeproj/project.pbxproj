@@ -15,12 +15,31 @@
 		362227C11D8DC53E008405F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362227BF1D8DC53E008405F1 /* LaunchScreen.storyboard */; };
 		3631BE581D90EB5900001243 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE571D90EB5900001243 /* Waypoint.swift */; };
 		3631BE5A1D90EDC400001243 /* NavHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE591D90EDC400001243 /* NavHelpers.swift */; };
+		366D1BF31D9258300031130E /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF11D9258300031130E /* ReactiveSwift.framework */; };
+		366D1BF41D9258300031130E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF21D9258300031130E /* Result.framework */; };
 		3684C7271D90FFD800BA4FE5 /* denver-commute.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */; };
 		3684C7291D91011B00BA4FE5 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3684C7281D91011B00BA4FE5 /* Vector.swift */; };
 		36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39C1D8DCC63002FE148 /* CompassView.swift */; };
 		36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39E1D8DDEC6002FE148 /* PointerView.swift */; };
+		36ECF7C11D9266BD00AF926A /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF11D9258300031130E /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36ECF7C21D9266BD00AF926A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF21D9258300031130E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		905AB1BEA257E5B5B51C0EFA /* Pods_Sternidae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A31B4AA7D824EFB65E21 /* Pods_Sternidae.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36ECF7C01D9266A600AF926A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				36ECF7C11D9266BD00AF926A /* ReactiveSwift.framework in Embed Frameworks */,
+				36ECF7C21D9266BD00AF926A /* Result.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		361E0B371D90F798001AEE62 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -33,6 +52,8 @@
 		362227C21D8DC53E008405F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3631BE571D90EB5900001243 /* Waypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 		3631BE591D90EDC400001243 /* NavHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHelpers.swift; sourceTree = "<group>"; };
+		366D1BF11D9258300031130E /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
+		366D1BF21D9258300031130E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "denver-commute.gpx"; sourceTree = "<group>"; };
 		3684C7281D91011B00BA4FE5 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		36CCC39C1D8DCC63002FE148 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
@@ -48,6 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				905AB1BEA257E5B5B51C0EFA /* Pods_Sternidae.framework in Frameworks */,
+				366D1BF31D9258300031130E /* ReactiveSwift.framework in Frameworks */,
+				366D1BF41D9258300031130E /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +127,8 @@
 		5E04D9505475E0A58219982B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				366D1BF11D9258300031130E /* ReactiveSwift.framework */,
+				366D1BF21D9258300031130E /* Result.framework */,
 				CE88A31B4AA7D824EFB65E21 /* Pods_Sternidae.framework */,
 			);
 			name = Frameworks;
@@ -119,6 +144,7 @@
 				D569DB0ADA68FB0982E5720B /* 📦 Check Pods Manifest.lock */,
 				362227AF1D8DC53D008405F1 /* Sources */,
 				362227B01D8DC53D008405F1 /* Frameworks */,
+				36ECF7C01D9266A600AF926A /* Embed Frameworks */,
 				362227B11D8DC53D008405F1 /* Resources */,
 				D3B3BC0AE0CB46DCC4304B51 /* 📦 Embed Pods Frameworks */,
 				B43E016ACDEF11539A3DD837 /* 📦 Copy Pods Resources */,
@@ -364,6 +390,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDT858WE2W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sternidae/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kesdev.Sternidae;
@@ -379,6 +409,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DDT858WE2W;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sternidae/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kesdev.Sternidae;

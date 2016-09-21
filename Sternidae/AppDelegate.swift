@@ -1,6 +1,7 @@
 import UIKit
 import CoreLocation
 import SwiftEventBus
+import ReactiveSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
@@ -8,9 +9,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     var locMgr: CLLocationManager?
     var lastVector: Vector?
-
+    
+    enum NoError: Error { case dontCare }
+    var locObserver: Observer<CLLocation, NoError>?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         startListeningForLocation()
+        
+        let (locSignal, lObs) = Signal<CLLocation, NoError>.pipe()
+        locObserver = lObs
+
+        locSignal.observe { event in
+            if let val = event.value {
+                print("Observed location change: \(val)")
+            }
+        }
         return true
     }
     
@@ -41,19 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            processLocation(location)
+            locObserver?.send(value: location)
         }
-    }
-    
-    func processLocation(_ newLocation: CLLocation) {
-        guard let last = lastVector else {
-            lastVector = Vector(loc: newLocation, time: Date())
-            return
-        }
-        let current = Vector(loc: newLocation, time: Date(), last: last)
-        print(current)
-        SwiftEventBus.post("NewVector", sender: current)
-        lastVector = current
     }
     
 }
