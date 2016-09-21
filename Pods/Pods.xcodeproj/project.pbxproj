@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F356334BBB11485E242C63E3F3E906E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		5A4B2D273137A45B7B9F75122A01D15A /* SwiftEventBus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58606AC9CAAD56DB49D7D75C9AE16758 /* SwiftEventBus-dummy.m */; };
-		6B34826709BB76EA4D70178D0A2E73DF /* SwiftEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DD238FDDD90435187192D01C78CA4 /* SwiftEventBus.swift */; };
+		47087B9D3CB0F1EF39C30D69AD6C0563 /* SwiftEventBus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58606AC9CAAD56DB49D7D75C9AE16758 /* SwiftEventBus-dummy.m */; };
+		76416D32ED6157722316320F7F24AE2B /* SwiftEventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244DD238FDDD90435187192D01C78CA4 /* SwiftEventBus.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		96C64090D8BECB4A38B086EC1075FB07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		9C020374ED91B77F2BD9452CA72533E3 /* SwiftEventBus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC0E69511CC457974EE7BC847057D0D7 /* SwiftEventBus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC18FC37F02EDEAF1609771C811AB3CB /* Pods-Sternidae-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E76DA5AC32D1E58F04A6C7F872092A9 /* Pods-Sternidae-dummy.m */; };
@@ -207,7 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B18DE93B97638BA89CF534280AF07898 /* Build configuration list for PBXNativeTarget "SwiftEventBus" */;
 			buildPhases = (
-				B27A986BEA926689B5AEC45B2734BF90 /* Sources */,
+				F87F334C2FDB45BF35AD40353F38AB5E /* Sources */,
 				4BFD1C33D441D83E1044D3DC7FFD3E22 /* Frameworks */,
 				47BA15B8AFBBC4D98AA6AB285E1A9A2E /* Headers */,
 			);
@@ -256,12 +256,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B27A986BEA926689B5AEC45B2734BF90 /* Sources */ = {
+		F87F334C2FDB45BF35AD40353F38AB5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A4B2D273137A45B7B9F75122A01D15A /* SwiftEventBus-dummy.m in Sources */,
-				6B34826709BB76EA4D70178D0A2E73DF /* SwiftEventBus.swift in Sources */,
+				47087B9D3CB0F1EF39C30D69AD6C0563 /* SwiftEventBus-dummy.m in Sources */,
+				76416D32ED6157722316320F7F24AE2B /* SwiftEventBus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +448,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -477,6 +478,7 @@
 				PRODUCT_NAME = SwiftEventBus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

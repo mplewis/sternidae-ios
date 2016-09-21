@@ -3,7 +3,7 @@ import CoreLocation
 
 @IBDesignable class PointerView: UIView {
     
-    @IBInspectable var color: UIColor = .white()
+    @IBInspectable var color: UIColor = .white
     @IBInspectable var thickness: CGFloat = 5
     @IBInspectable var outerGap: CGFloat = 0
     @IBInspectable var length: CGFloat = 1.0 {

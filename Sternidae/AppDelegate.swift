@@ -39,8 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation,
-                         fromLocation oldLocation: CLLocation) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        for location in locations {
+            processLocation(location)
+        }
+    }
+    
+    func processLocation(_ newLocation: CLLocation) {
         guard let last = lastVector else {
             lastVector = Vector(loc: newLocation, time: Date())
             return

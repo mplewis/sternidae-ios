@@ -1,12 +1,22 @@
 PODS:
-  - SwiftEventBus (1.1.0)
+  - SwiftEventBus (2.1.0)
 
 DEPENDENCIES:
-  - SwiftEventBus
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus`, tag `2.1.0`)
+
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus
+    :tag: 2.1.0
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus
+    :tag: 2.1.0
 
 SPEC CHECKSUMS:
-  SwiftEventBus: d33b51752d4e3e994f0ea7b31873f0beca7eada0
+  SwiftEventBus: 03fb72b65f3ae11912dec2591567b89e5908a781
 
-PODFILE CHECKSUM: 1be6ffd9ece45977dcdf51f1b01b06b7ce88609d
+PODFILE CHECKSUM: b67908d0c3187f2f27215042121db38c76f0243d
 
 COCOAPODS: 1.0.0

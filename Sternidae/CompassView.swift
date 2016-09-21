@@ -4,7 +4,7 @@ let F_PI = CGFloat(M_PI)
 
 @IBDesignable class CompassView: UIView {
     
-    @IBInspectable var outlineColor: UIColor = .white()
+    @IBInspectable var outlineColor: UIColor = .white
     @IBInspectable var thickness: CGFloat = 5
     var pointers: [PointerView] = []
     
@@ -20,8 +20,8 @@ let F_PI = CGFloat(M_PI)
     
     func newPointer() -> PointerView {
         let pointer = PointerView(frame: bounds)
-        pointer.backgroundColor = .clear()
-        pointer.color = .orange()
+        pointer.backgroundColor = .clear
+        pointer.color = .orange
         pointer.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         pointer.outerGap = thickness
         pointer.thickness = thickness
