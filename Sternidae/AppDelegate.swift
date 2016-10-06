@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupSignal()
         startListeningForLocation()
+        UIApplication.shared.isIdleTimerDisabled = true  // disable auto sleep
         return true
     }
     
