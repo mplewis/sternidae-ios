@@ -6,21 +6,32 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var navInfo: UILabel!
     @IBOutlet weak var compass: CompassView!
+    @IBOutlet weak var sampleWindowStepper: UIStepper!
+    @IBOutlet weak var sampleWindowLabel: UILabel!
 
-    let sampleWindow = 5
+    var sampleWindow: Int = 0 {
+        didSet {
+            sampleWindowLabel.text = "\(sampleWindow)"
+            listenForLocation(samples: sampleWindow)
+        }
+    }
 
     var northPointer: PointerView?
     var waypointPointers: [PointerView] = []
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
         initPointers()
-        listenForLocation()
+        checkInitialWindow()
     }
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
+
+    @IBAction func stepperChanged(_ sender: UIStepper) {
+        sampleWindow = Int(sender.value)
     }
     
     func initPointers() {
@@ -44,19 +55,27 @@ class ViewController: UIViewController {
         }
     }
     
-    func listenForLocation() {
+    func checkInitialWindow() {
+        let window = Int(sampleWindowStepper.value)
+        sampleWindow = window
+    }
+    
+    var allObs: Disposable?
+    func listenForLocation(samples: Int) {
+        allObs?.dispose()  // Trash any previous listeners before we re-init with a new sample window
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         guard let locSignal = appDelegate.locSignal else {
             print("locSignal not ready; couldn't observe location")
             return
         }
 
-        let sampler = ReactiveHelpers.rollingWindow(signal: locSignal, count: sampleWindow)
+        let sampler = ReactiveHelpers.rollingWindow(signal: locSignal, count: samples)
         let location = sampler.map { $0.last!.loc }
         let heading = sampler.map { NavHelpers.haversine(from: $0.first!.loc, to: $0.last!.loc) }
         let speed = sampler.map { self.speedOver(locs: $0) }
 
-        location.combineLatest(with: heading).combineLatest(with: speed).observe { event in
+        allObs = location.combineLatest(with: heading).combineLatest(with: speed).observe { event in
             self.setPointerLengths()  // HACK
             if let ((location, heading), speed) = event.value {
                 self.render(location: location, heading: heading, speed: speed)
