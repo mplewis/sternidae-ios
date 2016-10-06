@@ -20,7 +20,7 @@ class NavHelpers {
      - parameter from: the origin
      - parameter to: the destination
      
-     - returns: the angle between `from` and `to`, in radians
+     - returns: the angle between `from` and `to`, in degrees
      */
     class func haversine(from: CLLocation, to: CLLocation) -> CLLocationDegrees {
         let lat1 = degreesToRadians(from.coordinate.latitude)
@@ -39,5 +39,25 @@ class NavHelpers {
         }
         
         return radiansToDegrees(radiansBearing)
+    }
+    
+    class func headingToCardinal(degrees: CLLocationDegrees) -> String {
+        let cardinals = [
+            "N", "NNE", "NE", "ENE",
+            "E", "ESE", "SE", "SSE",
+            "S", "SSW", "SW", "WSW",
+            "W", "WNW", "NW", "NNW",
+        ]
+        
+        let stepDegrees = 360 / cardinals.count
+        
+        var index = Int(degrees.truncatingRemainder(dividingBy: 360))
+        if index < 0 {
+            index += 360
+        }
+        index += stepDegrees / 2
+        index /= stepDegrees
+
+        return cardinals[index % cardinals.count]
     }
 }

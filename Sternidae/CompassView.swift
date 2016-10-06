@@ -27,6 +27,7 @@ let F_PI = CGFloat(M_PI)
         pointer.thickness = thickness
         addSubview(pointer)
         pointers.append(pointer)
+        pointer.setNeedsDisplay()
         return pointer
     }
     
