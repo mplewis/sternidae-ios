@@ -19,8 +19,6 @@
 		364951861D999B66009A3141 /* LocTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364951851D999B66009A3141 /* LocTime.swift */; };
 		366D1BF31D9258300031130E /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF11D9258300031130E /* ReactiveSwift.framework */; };
 		366D1BF41D9258300031130E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF21D9258300031130E /* Result.framework */; };
-		367690FE1D99D28200031541 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367690EE1D99D1F500031541 /* AppTests.swift */; };
-		367690FF1D99D2F000031541 /* NavHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3631BE591D90EDC400001243 /* NavHelpers.swift */; };
 		3684C7271D90FFD800BA4FE5 /* denver-commute.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */; };
 		36CCC39D1D8DCC63002FE148 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39C1D8DCC63002FE148 /* CompassView.swift */; };
 		36CCC39F1D8DDEC6002FE148 /* PointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CCC39E1D8DDEC6002FE148 /* PointerView.swift */; };
@@ -28,16 +26,6 @@
 		36ECF7C21D9266BD00AF926A /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 366D1BF21D9258300031130E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		905AB1BEA257E5B5B51C0EFA /* Pods_Sternidae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88A31B4AA7D824EFB65E21 /* Pods_Sternidae.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		367690F91D99D27C00031541 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 362227AB1D8DC53D008405F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 362227B21D8DC53D008405F1;
-			remoteInfo = Sternidae;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		36ECF7C01D9266A600AF926A /* Embed Frameworks */ = {
@@ -70,7 +58,6 @@
 		366D1BF11D9258300031130E /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		366D1BF21D9258300031130E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		367690EE1D99D1F500031541 /* AppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		367690F41D99D27C00031541 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3684C7261D90FFD800BA4FE5 /* denver-commute.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "denver-commute.gpx"; sourceTree = "<group>"; };
 		36CCC39C1D8DCC63002FE148 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		36CCC39E1D8DDEC6002FE148 /* PointerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerView.swift; sourceTree = "<group>"; };
@@ -87,13 +74,6 @@
 				905AB1BEA257E5B5B51C0EFA /* Pods_Sternidae.framework in Frameworks */,
 				366D1BF31D9258300031130E /* ReactiveSwift.framework in Frameworks */,
 				366D1BF41D9258300031130E /* Result.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		367690F11D99D27C00031541 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				362227B31D8DC53D008405F1 /* Sternidae.app */,
-				367690F41D99D27C00031541 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,24 +163,6 @@
 			productReference = 362227B31D8DC53D008405F1 /* Sternidae.app */;
 			productType = "com.apple.product-type.application";
 		};
-		367690F31D99D27C00031541 /* Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 367690FB1D99D27C00031541 /* Build configuration list for PBXNativeTarget "Tests" */;
-			buildPhases = (
-				367690F01D99D27C00031541 /* Sources */,
-				367690F11D99D27C00031541 /* Frameworks */,
-				367690F21D99D27C00031541 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				367690FA1D99D27C00031541 /* PBXTargetDependency */,
-			);
-			name = Tests;
-			productName = Tests;
-			productReference = 367690F41D99D27C00031541 /* Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,12 +177,6 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = DDT858WE2W;
 						LastSwiftMigration = 0800;
-					};
-					367690F31D99D27C00031541 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = DDT858WE2W;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 362227B21D8DC53D008405F1;
 					};
 				};
 			};
@@ -239,7 +194,6 @@
 			projectRoot = "";
 			targets = (
 				362227B21D8DC53D008405F1 /* Sternidae */,
-				367690F31D99D27C00031541 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,13 +207,6 @@
 				362227BE1D8DC53D008405F1 /* Assets.xcassets in Resources */,
 				3684C7271D90FFD800BA4FE5 /* denver-commute.gpx in Resources */,
 				362227BC1D8DC53D008405F1 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		367690F21D99D27C00031541 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,24 +277,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		367690F01D99D27C00031541 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				367690FF1D99D2F000031541 /* NavHelpers.swift in Sources */,
-				367690FE1D99D28200031541 /* AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		367690FA1D99D27C00031541 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 362227B21D8DC53D008405F1 /* Sternidae */;
-			targetProxy = 367690F91D99D27C00031541 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		362227BA1D8DC53D008405F1 /* Main.storyboard */ = {
@@ -499,41 +429,6 @@
 			};
 			name = Release;
 		};
-		367690FC1D99D27C00031541 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = DDT858WE2W;
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kesdev.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sternidae.app/Sternidae";
-			};
-			name = Debug;
-		};
-		367690FD1D99D27C00031541 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
-				DEVELOPMENT_TEAM = DDT858WE2W;
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kesdev.Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sternidae.app/Sternidae";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,15 +446,6 @@
 			buildConfigurations = (
 				362227C61D8DC53E008405F1 /* Debug */,
 				362227C71D8DC53E008405F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		367690FB1D99D27C00031541 /* Build configuration list for PBXNativeTarget "Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				367690FC1D99D27C00031541 /* Debug */,
-				367690FD1D99D27C00031541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
