@@ -6,15 +6,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var navInfo: UILabel!
     @IBOutlet weak var compass: CompassView!
-    @IBOutlet weak var sampleWindowStepper: UIStepper!
-    @IBOutlet weak var sampleWindowLabel: UILabel!
 
-    var sampleWindow: Int = 0 {
-        didSet {
-            sampleWindowLabel.text = "\(sampleWindow)"
-            listenForLocation(samples: sampleWindow)
-        }
-    }
+    var sampleWindow: Int = 5
 
     var northPointer: PointerView?
     var waypointPointers: [PointerView] = []
@@ -27,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
         initPointers()
-        checkInitialWindow()
+        listenForLocation(samples: sampleWindow)
     }
 
     @IBAction func stepperChanged(_ sender: UIStepper) {
@@ -53,11 +46,6 @@ class ViewController: UIViewController {
         for pointer in waypointPointers {
             pointer.length = 0.2
         }
-    }
-    
-    func checkInitialWindow() {
-        let window = Int(sampleWindowStepper.value)
-        sampleWindow = window
     }
     
     var allObs: Disposable?
