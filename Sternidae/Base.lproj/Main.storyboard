@@ -120,12 +120,12 @@
                                     <constraint firstItem="J1k-TD-D0S" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="9MK-8I-NQ7"/>
                                     <constraint firstItem="J1k-TD-D0S" firstAttribute="top" secondItem="uaA-S7-ExD" secondAttribute="top" constant="95" id="CbU-Kp-rCu"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="yk3-tN-RbJ" secondAttribute="trailing" id="HpS-9b-wKf"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="hGF-Wf-UYq" secondAttribute="bottom" id="IZ6-Xc-Q3q"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="hGF-Wf-UYq" secondAttribute="bottom" constant="16" id="IZ6-Xc-Q3q"/>
                                     <constraint firstItem="N6e-Js-0Cw" firstAttribute="top" secondItem="yk3-tN-RbJ" secondAttribute="bottom" constant="13" id="R6H-Gu-xjf"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="J1k-TD-D0S" secondAttribute="trailing" id="V5U-cA-DY5"/>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="Wh8-8U-5uM"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" constant="16" id="Wh8-8U-5uM"/>
                                     <constraint firstItem="N6e-Js-0Cw" firstAttribute="leading" secondItem="uaA-S7-ExD" secondAttribute="leadingMargin" id="lBP-sl-biF"/>
-                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" id="nnW-uv-CLD"/>
+                                    <constraint firstItem="hGF-Wf-UYq" firstAttribute="trailing" secondItem="uaA-S7-ExD" secondAttribute="trailingMargin" constant="-16" id="nnW-uv-CLD"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="N6e-Js-0Cw" secondAttribute="trailing" id="t2K-sy-TFc"/>
                                     <constraint firstItem="yk3-tN-RbJ" firstAttribute="top" secondItem="J1k-TD-D0S" secondAttribute="bottom" constant="32" id="vYS-5t-j0K"/>
                                 </constraints>
