@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-Vr-UDa" userLabel="Spacer">
@@ -26,7 +26,7 @@
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J1k-TD-D0S" userLabel="Heading Speed">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5eY-y9-f9g" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5eY-y9-f9g" userLabel="Heading" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Heading"/>
@@ -35,7 +35,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-TY-Qef" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-TY-Qef" userLabel="Speed" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Speed"/>
@@ -52,19 +52,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67k-XZ-xZb" userLabel="Spacer">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-tN-RbJ" userLabel="Destination Picker">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-tN-RbJ" userLabel="Destination Picker">
+                                <frame key="frameInset" minX="20" minY="177" width="343" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0X-jv-rUy">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0X-jv-rUy">
+                                        <frame key="frameInset" width="30" height="30"/>
                                         <state key="normal" title="◀">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-Ag-8mk">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-Ag-8mk">
+                                        <frame key="frameInset" minX="109" minY="1" width="126" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Y-Nk-MBi">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Y-Nk-MBi">
+                                        <frame key="frameInset" minX="313" width="30" height="30"/>
                                         <state key="normal" title="▶">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -79,7 +83,7 @@
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N6e-Js-0Cw" userLabel="Direction Distance ETA">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4N-X4-IOj" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4N-X4-IOj" userLabel="Direction" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Direction"/>
@@ -88,7 +92,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-J0-fuY" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-J0-fuY" userLabel="Distance" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="Distance"/>
@@ -97,7 +101,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo3-mQ-Bjf" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo3-mQ-Bjf" userLabel="ETA" customClass="NavInfoView" customModule="Sternidae" customModuleProvider="target">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="key" value="ETA"/>
@@ -125,29 +129,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-RV-g7K" userLabel="Control Area">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hGF-Wf-UYq" secondAttribute="bottom" constant="16" id="07g-Ht-6Vw"/>
-                            <constraint firstItem="67k-XZ-xZb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="24/667" id="0vq-rj-gb7"/>
                             <constraint firstAttribute="trailing" secondItem="67k-XZ-xZb" secondAttribute="trailing" id="2jG-jc-TFD"/>
                             <constraint firstAttribute="trailing" secondItem="05V-Ih-hBY" secondAttribute="trailing" id="2wa-Nx-BIE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N6e-Js-0Cw" secondAttribute="trailing" id="4p5-Bd-RFT"/>
-                            <constraint firstItem="05V-Ih-hBY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="13/667" id="Aw5-r2-byp"/>
-                            <constraint firstItem="4Pi-Vr-UDa" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="30/667" priority="1" id="Bay-HS-3GY"/>
+                            <constraint firstItem="Xhv-RV-g7K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6tm-48-CpN"/>
+                            <constraint firstItem="hGF-Wf-UYq" firstAttribute="top" secondItem="Xhv-RV-g7K" secondAttribute="bottom" id="8WS-qN-gUL"/>
                             <constraint firstItem="yk3-tN-RbJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CPO-R2-SlQ"/>
                             <constraint firstItem="N6e-Js-0Cw" firstAttribute="top" secondItem="05V-Ih-hBY" secondAttribute="bottom" id="Cq9-Ej-JcL"/>
                             <constraint firstAttribute="trailing" secondItem="J1k-TD-D0S" secondAttribute="trailing" id="Ehr-KO-MKL"/>
                             <constraint firstItem="67k-XZ-xZb" firstAttribute="top" secondItem="J1k-TD-D0S" secondAttribute="bottom" id="JU0-UG-l6G"/>
                             <constraint firstItem="yk3-tN-RbJ" firstAttribute="top" secondItem="67k-XZ-xZb" secondAttribute="bottom" id="Rtn-GK-IRl"/>
+                            <constraint firstItem="4Pi-Vr-UDa" firstAttribute="height" secondItem="Xhv-RV-g7K" secondAttribute="height" multiplier="14/100" id="TQs-4U-IFh"/>
+                            <constraint firstItem="05V-Ih-hBY" firstAttribute="height" secondItem="Xhv-RV-g7K" secondAttribute="height" multiplier="4/100" id="UBk-ou-pq9"/>
+                            <constraint firstItem="67k-XZ-xZb" firstAttribute="height" secondItem="Xhv-RV-g7K" secondAttribute="height" multiplier="12/100" id="UH8-hl-Wuf"/>
                             <constraint firstItem="J1k-TD-D0S" firstAttribute="top" secondItem="4Pi-Vr-UDa" secondAttribute="bottom" id="XbH-Mk-d0J"/>
                             <constraint firstItem="N6e-Js-0Cw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aT3-LH-M8Q"/>
                             <constraint firstItem="hGF-Wf-UYq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="bPi-S6-FKd"/>
                             <constraint firstItem="67k-XZ-xZb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d44-Fm-Fyj"/>
+                            <constraint firstItem="Xhv-RV-g7K" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="e1c-KW-83I"/>
                             <constraint firstAttribute="trailing" secondItem="4Pi-Vr-UDa" secondAttribute="trailing" id="haS-Ai-LAS"/>
                             <constraint firstItem="J1k-TD-D0S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lWA-y7-vMU"/>
                             <constraint firstItem="4Pi-Vr-UDa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oLn-o1-W4a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yk3-tN-RbJ" secondAttribute="trailing" id="ref-6k-432"/>
+                            <constraint firstAttribute="trailing" secondItem="Xhv-RV-g7K" secondAttribute="trailing" id="tst-NB-V2K"/>
                             <constraint firstItem="4Pi-Vr-UDa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wh5-bm-ULf"/>
                             <constraint firstItem="05V-Ih-hBY" firstAttribute="top" secondItem="yk3-tN-RbJ" secondAttribute="bottom" id="wjV-LU-Rlk"/>
                             <constraint firstItem="05V-Ih-hBY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zBF-OX-S8C"/>
@@ -160,11 +171,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="compass" destination="hGF-Wf-UYq" id="qlH-Yt-E4r"/>
+                        <outlet property="headingView" destination="5eY-y9-f9g" id="blK-Vl-VZI"/>
+                        <outlet property="speedView" destination="4Zj-TY-Qef" id="zCH-Mx-RoF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="220.83958020989508"/>
+            <point key="canvasLocation" x="1186.9565217391305" y="220.10869565217394"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F5l-bk-jLU">
