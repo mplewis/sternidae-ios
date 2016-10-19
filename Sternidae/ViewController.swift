@@ -8,7 +8,10 @@ class ViewController: UIViewController {
 
     let MPH_PER_MPS = 2.23694
     let MI_PER_M = 0.000621371
-
+    
+    let sampleWindow = 5
+    let noEta = "-:--"
+    
     // MARK: - IB Outlets
 
     @IBOutlet weak var headingView: NavInfoView!
@@ -33,8 +36,6 @@ class ViewController: UIViewController {
     
     // MARK: - Variables
     
-    var sampleWindow: Int = 5
-
     var northPointer: PointerView?
     var waypointPointers: [PointerView] = []
     
@@ -101,26 +102,40 @@ class ViewController: UIViewController {
         }
 
         let sampler = ReactiveHelpers.rollingWindow(signal: locSignal, count: samples)
-        let location = sampler.map { $0.last!.loc }
+        let location = locSignal.map { $0.loc }
         let heading = sampler.map { NavHelpers.haversine(from: $0.first!.loc, to: $0.last!.loc) }
         let speed = sampler.map { self.speedOver(locs: $0) }
+        let etaToDest = sampler.map { self.etaOver(locs: $0) }.filter { $0 != nil }.map { $0! }
         
-        heading.observe { event in
-            if let h = event.value {
-                self.headingView.value = NavHelpers.headingToCardinal(degrees: h)
+        heading
+            .map { NavHelpers.headingToCardinal(degrees: $0) }
+            .observe { event in
+                if let h = event.value {
+                    self.headingView.value = h
+                }
             }
-        }
         
-        speed.observe { event in
-            if let s = event.value {
-                self.speedView.value = "\(Int(s * self.MPH_PER_MPS)) mph"
+        speed
+            .map { "\(Int($0 * self.MPH_PER_MPS)) mph" }
+            .observe { event in
+                if let s = event.value {
+                    self.speedView.value = s
+                }
             }
-        }
+        
+        etaToDest
+            .map { self.minSecs(seconds: $0) }
+            .observe { event in
+                if let e = event.value {
+                    self.etaView.value = e
+                }
+            }
 
         location.combineLatest(with: heading).combineLatest(with: speed).observe { event in
             self.setPointerLengths()  // HACK
             if let ((location, heading), speed) = event.value {
-                self.render(location: location, heading: heading, speed: speed)
+                self.renderPointers(location: location, heading: heading)
+                self.renderDestInfo(location: location, heading: heading, speed: speed)
             }
         }
     }
@@ -143,12 +158,28 @@ class ViewController: UIViewController {
         return dist / time
     }
     
-    // MARK: Rendering
-    
-    func render(location: CLLocation, heading: CLLocationDegrees, speed: CLLocationSpeed) {
-        renderPointers(location: location, heading: heading)
-        renderInfo(location: location, heading: heading, speed: speed)
+    func etaOver(locs: [LocTime]) -> TimeInterval? {
+        guard let first = locs.first, let last = locs.last else { return nil }
+        
+        let firstDist = first.loc.distance(from: currentDest.loc)
+        let lastDist = last.loc.distance(from: currentDest.loc)
+        let elapsed = last.time.timeIntervalSince(first.time)
+        let mpsToward = (lastDist - firstDist) / elapsed
+        let seconds = -lastDist / mpsToward
+        return seconds
     }
+    
+    func minSecs(seconds: TimeInterval) -> String {
+        if seconds < 0 {
+            return noEta
+        }
+
+        let secs = Int(seconds.truncatingRemainder(dividingBy: 60))
+        let mins = Int(seconds / 60)
+        return String(format: "%d:%02d", mins, secs)
+    }
+    
+    // MARK: Rendering
     
     func renderPointers(location: CLLocation, heading: CLLocationDegrees) {
         northPointer?.setAngle(degrees: -heading)
@@ -159,14 +190,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func renderInfo(location: CLLocation, heading: CLLocationDegrees, speed: CLLocationSpeed) {
+    func renderDestInfo(location: CLLocation, heading: CLLocationDegrees, speed: CLLocationSpeed) {
         let distance = String(format: "%.01f mi", location.distance(from: currentDest.loc) * MI_PER_M)
         let degrees = NavHelpers.haversine(from: location, to: currentDest.loc)
         let direction = NavHelpers.headingToCardinal(degrees: degrees)
         
         directionView.value = direction
         distanceView.value = distance
-        etaView.value = "-:--"
     }
 
 }
