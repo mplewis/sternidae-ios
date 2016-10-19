@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-RV-g7K" userLabel="Control Area">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-Vr-UDa" userLabel="Spacer">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -63,7 +66,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="prevDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMn-4A-NEx"/>
+                                            <action selector="prevDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bzt-b4-ihz"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-Ag-8mk">
@@ -80,7 +83,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="nextDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIP-kE-M9O"/>
+                                            <action selector="nextDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tya-JY-rOR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -140,11 +143,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-RV-g7K" userLabel="Control Area">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.26666666666666666" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hGF-Wf-UYq" secondAttribute="bottom" constant="16" id="07g-Ht-6Vw"/>
                             <constraint firstAttribute="trailing" secondItem="67k-XZ-xZb" secondAttribute="trailing" id="2jG-jc-TFD"/>
