@@ -15,8 +15,12 @@ import CoreLocation
     }
     
     fileprivate var innerGap: CGFloat = 0
+    fileprivate var angleSet = false
     
     override func draw(_ rect: CGRect) {
+        // Don't draw this until the angle has been set for the first time
+        if !angleSet { return }
+
         let path = UIBezierPath()
         path.lineWidth = thickness
 
@@ -53,6 +57,7 @@ import CoreLocation
         let unitCircleDegrees = degrees - 90
         let rads = NavHelpers.degreesToRadians(unitCircleDegrees)
         transform = CGAffineTransform(rotationAngle: CGFloat(rads))
+        angleSet = true
     }
 
 }
