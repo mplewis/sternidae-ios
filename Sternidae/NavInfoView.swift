@@ -5,26 +5,36 @@ import UIKit
     @IBInspectable var fontSize: CGFloat = 18
     @IBInspectable var color: UIColor = UIColor.white
     @IBInspectable var key: String = "Key"
-    @IBInspectable var value: String = "Value"
+    
+    let topLabel = UILabel()
+    let bottomLabel = UILabel()
+    var value: String = "" {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
+    var addedViews = false
 
     override func draw(_ rect: CGRect) {
         let (top, bottom) = topAndBottomRects()
-
-        let topLabel = UILabel()
+        
         topLabel.text = key
         topLabel.frame = top
         topLabel.font = UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightLight)
         topLabel.textColor = color
         topLabel.textAlignment = .center
-        addSubview(topLabel)
         
-        let bottomLabel = UILabel()
         bottomLabel.text = value
         bottomLabel.frame = bottom
         bottomLabel.font = UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightMedium)
         bottomLabel.textColor = color
         bottomLabel.textAlignment = .center
+
+        if addedViews { return }
+        addSubview(topLabel)
         addSubview(bottomLabel)
+        addedViews = true
     }
     
     func topAndBottomRects() -> (top: CGRect, bottom: CGRect) {

@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-Vr-UDa" userLabel="Spacer">
@@ -52,8 +52,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67k-XZ-xZb" userLabel="Spacer">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-tN-RbJ" userLabel="Destination Picker">
-                                <frame key="frameInset" minX="20" minY="177" width="374" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-tN-RbJ" userLabel="Destination Picker">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0X-jv-rUy">
                                         <constraints>
@@ -63,6 +62,9 @@
                                         <state key="normal" title="◀">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="prevDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMn-4A-NEx"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-Ag-8mk">
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
@@ -77,6 +79,9 @@
                                         <state key="normal" title="▶">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nextDestination:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIP-kE-M9O"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -177,6 +182,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="compass" destination="hGF-Wf-UYq" id="toE-H5-abL"/>
+                        <outlet property="destinationView" destination="UZe-Ag-8mk" id="kdE-Lv-AoA"/>
+                        <outlet property="directionView" destination="Y4N-X4-IOj" id="NAb-Po-jJY"/>
+                        <outlet property="distanceView" destination="xyA-J0-fuY" id="4Vz-Rr-K60"/>
+                        <outlet property="etaView" destination="Wo3-mQ-Bjf" id="gCd-oU-e70"/>
                         <outlet property="headingView" destination="5eY-y9-f9g" id="blK-Vl-VZI"/>
                         <outlet property="speedView" destination="4Zj-TY-Qef" id="zCH-Mx-RoF"/>
                     </connections>

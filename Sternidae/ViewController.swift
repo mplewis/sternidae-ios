@@ -3,14 +3,58 @@ import CoreLocation
 import ReactiveSwift
 
 class ViewController: UIViewController {
+    
+    // MARK: - Constants
 
-    @IBOutlet weak var navInfo: UILabel!
+    let MPH_PER_MPS = 2.23694
+    let MI_PER_M = 0.000621371
+
+    // MARK: - IB Outlets
+
+    @IBOutlet weak var headingView: NavInfoView!
+    @IBOutlet weak var speedView: NavInfoView!
+    
+    @IBOutlet weak var destinationView: UILabel!
+    @IBOutlet weak var directionView: NavInfoView!
+    @IBOutlet weak var distanceView: NavInfoView!
+    @IBOutlet weak var etaView: NavInfoView!
+
     @IBOutlet weak var compass: CompassView!
-
+    
+    // MARK: IB Actions
+    
+    @IBAction func prevDestination(_ sender: UIButton) {
+        currentDestIndex -= 1
+    }
+    
+    @IBAction func nextDestination(_ sender: UIButton) {
+        currentDestIndex += 1
+    }
+    
+    // MARK: - Variables
+    
     var sampleWindow: Int = 5
 
     var northPointer: PointerView?
     var waypointPointers: [PointerView] = []
+    
+    var _cdi = 0
+    var currentDestIndex: Int {
+        get {
+            return _cdi
+        }
+        set(new) {
+            _cdi = (new + MockData.waypoints.count) % MockData.waypoints.count
+            destinationView.text = currentDest.name
+            destinationView.textColor = currentDest.color
+        }
+    }
+    
+    var currentDest: Waypoint {
+        return MockData.waypoints[currentDestIndex]
+    }
+    
+    // MARK: - UIView methods
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
@@ -20,12 +64,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
         initPointers()
+        currentDestIndex = 0
         listenForLocation(samples: sampleWindow)
     }
-
-    @IBAction func stepperChanged(_ sender: UIStepper) {
-        sampleWindow = Int(sender.value)
-    }
+    
+    // MARK: Setup
     
     func initPointers() {
         let np = compass.newPointer()
@@ -48,10 +91,9 @@ class ViewController: UIViewController {
         }
     }
     
-    var allObs: Disposable?
+    // MARK: - Handle incoming location
+    
     func listenForLocation(samples: Int) {
-        allObs?.dispose()  // Trash any previous listeners before we re-init with a new sample window
-
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         guard let locSignal = appDelegate.locSignal else {
             print("locSignal not ready; couldn't observe location")
@@ -62,14 +104,28 @@ class ViewController: UIViewController {
         let location = sampler.map { $0.last!.loc }
         let heading = sampler.map { NavHelpers.haversine(from: $0.first!.loc, to: $0.last!.loc) }
         let speed = sampler.map { self.speedOver(locs: $0) }
+        
+        heading.observe { event in
+            if let h = event.value {
+                self.headingView.value = NavHelpers.headingToCardinal(degrees: h)
+            }
+        }
+        
+        speed.observe { event in
+            if let s = event.value {
+                self.speedView.value = "\(Int(s * self.MPH_PER_MPS)) mph"
+            }
+        }
 
-        allObs = location.combineLatest(with: heading).combineLatest(with: speed).observe { event in
+        location.combineLatest(with: heading).combineLatest(with: speed).observe { event in
             self.setPointerLengths()  // HACK
             if let ((location, heading), speed) = event.value {
                 self.render(location: location, heading: heading, speed: speed)
             }
         }
     }
+    
+    // MARK: Processing helpers
     
     func distanceOver(locs: [LocTime]) -> CLLocationDistance {
         var dist: CLLocationDistance = 0
@@ -87,6 +143,8 @@ class ViewController: UIViewController {
         return dist / time
     }
     
+    // MARK: Rendering
+    
     func render(location: CLLocation, heading: CLLocationDegrees, speed: CLLocationSpeed) {
         renderPointers(location: location, heading: heading)
         renderInfo(location: location, heading: heading, speed: speed)
@@ -102,25 +160,13 @@ class ViewController: UIViewController {
     }
     
     func renderInfo(location: CLLocation, heading: CLLocationDegrees, speed: CLLocationSpeed) {
-        let MPH_PER_MPS = 2.23694
-        let MI_PER_M = 0.000621371
+        let distance = String(format: "%.01f mi", location.distance(from: currentDest.loc) * MI_PER_M)
+        let degrees = NavHelpers.haversine(from: location, to: currentDest.loc)
+        let direction = NavHelpers.headingToCardinal(degrees: degrees)
         
-        let mph = String(format: "%.01f", speed * MPH_PER_MPS)
-        var info = [
-            "Heading: \(NavHelpers.headingToCardinal(degrees: heading))",
-            "Speed: \(mph) mph",
-        ]
-
-        MockData.waypoints.forEach { waypoint in
-            let name = waypoint.name
-            let distance = String(format: "%.01f", location.distance(from: waypoint.loc) * MI_PER_M)
-            let degrees = NavHelpers.haversine(from: location, to: waypoint.loc)
-            let direction = NavHelpers.headingToCardinal(degrees: degrees)
-            info.append("\(name): \(distance) mi \(direction)")
-        }
-        
-        let output = info.joined(separator: "\n")
-        navInfo.text = output
+        directionView.value = direction
+        distanceView.value = distance
+        etaView.value = "-:--"
     }
 
 }
